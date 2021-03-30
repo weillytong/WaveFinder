@@ -22,6 +22,6 @@ const reportSchema = new Schema ({
   suit: String
 })
 
-const Surf = mongoose.model('Report', reportSchema)
+const Report = mongoose.model('Report', reportSchema)
 
-module.exports = Surf;
+module.exports = Report;

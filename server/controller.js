@@ -1,6 +1,6 @@
+const dbQueries = require('../database/dbQueries.js');
 
 const controller = {
-
   // get all surf data
   getSurf: (req, res) => {
     dbQueries.getSurf(req, (err, data) => {
@@ -11,6 +11,6 @@ const controller = {
       }
     })
   }
-
-
 }
+
+module.exports = controller;
