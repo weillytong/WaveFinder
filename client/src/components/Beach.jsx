@@ -6,21 +6,33 @@ export default class Beach extends React.Component {
     this.state = {
       // livestream: false
     }
-    this.handleClick = this.handleClick.bind(this);
+    this.liveStreamClick = this.liveStreamClick.bind(this);
+    this.suitClick = this.suitClick.bind(this);
   }
 
-  handleClick() {
+  liveStreamClick() {
     window.open(this.props.beach.livestream)
   }
 
+  suitClick() {
+    window.open(this.props.beach.suit[0].website)
+  }
+
+
   render() {
-    const {id, beach, surf, report, tide, wind, swell, water, weather, suit, livestream} = this.props.beach
+    const {id, beach, beachImg, surf, report, tide, wind, swell, water, weather, suit, livestream} = this.props.beach
     return (
-      <div className="card" onClick={this.handleClick}>
+      <div className="card">
         <div className="beachName">
           {beach}
         </div>
-        <img className="pic" src='/images/LaJolla.png'/>
+        <img
+          className="pic"
+          id="locationPic"
+          // src='/images/LaJolla.png'
+          src={beachImg}
+          onClick={this.liveStreamClick}
+        />
         <div className="surfHeight">
           <div className="metricTitle">
             Surf Height
@@ -72,10 +84,21 @@ export default class Beach extends React.Component {
             {weather} °F
           </div>
         </div>
-        {/* <img src={suit}/> */}
+        <div className="suit">
+          <div className="metricTitle">
+            Best Suit For Today
+          </div>
+          <img
+            className="pic"
+            id="suitPic"
+            src={suit[0].img}
+            onClick={this.suitClick}
+          />
+          <div style={{fontSize: "12px"}}>
+            {suit[0].suitName}
+          </div>
+        </div>
       </div>
     )
   }
-
-
 }

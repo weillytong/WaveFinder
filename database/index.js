@@ -12,6 +12,7 @@ db.once('open', function() {
 const reportSchema = new Schema ({
   id: Number,
   beach: String,
+  beachImg: String,
   city: String,
   surf: String,
   report: String,
@@ -20,7 +21,7 @@ const reportSchema = new Schema ({
   swell: String,
   water: String,
   weather: String,
-  suit: String,
+  suit: Array,
   livestream: String,
   compass: String
 })
