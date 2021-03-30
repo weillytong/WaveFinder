@@ -49,26 +49,33 @@ export default class App extends React.Component {
     if (this.state.city === 'All Cities') {
       return (
         <div>
-          <h1> Surf Finder </h1>
-          <select value={this.state.value} onChange={this.handleChange}>
-          <option value="All Cities"> All Cities </option>
-            <option value="San Diego"> San Diego </option>
-            <option value="Los Angeles"> Los Angeles </option>
-          </select>
+            <div className="header">
+              <img className="logo" src="/images/wave.svg"/> Wave Finder
+            </div>
+            <div className="navigation">
+              <select value={this.state.city} onChange={this.handleChange}>
+              <option value="All Cities"> All Cities </option>
+                <option value="San Diego"> San Diego </option>
+                <option value="Los Angeles"> Los Angeles </option>
+              </select>
+            </div>
           {/* <iframe name="goog_1212536477" sandbox="allow-scripts allow-same-origin" srcdoc="<script src=https://pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js></script>" ></iframe> */}
           <BeachList beachList={this.state.beachList}/>
-
         </div>
       )
     } else {
       return (
         <div>
-          <h1> Surf Finder </h1>
-          <select value={this.state.value} onChange={this.handleChange}>
-          <option value="All Cities"> All Cities </option>
-            <option value="San Diego"> San Diego </option>
-            <option value="Los Angeles"> Los Angeles </option>
-          </select>
+            <div className="header">
+              <img className="logo" src="/images/wave.svg"/> Surf Finder
+            </div>
+          <div className="navigation">
+            <select value={this.state.city} onChange={this.handleChange}>
+            <option value="All Cities"> All Cities </option>
+              <option value="San Diego"> San Diego </option>
+              <option value="Los Angeles"> Los Angeles </option>
+            </select>
+          </div>
           {/* <iframe name="goog_1212536477" sandbox="allow-scripts allow-same-origin" srcdoc="<script src=https://pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js></script>" ></iframe> */}
           <BeachList beachList={this.state.selectedBeachList}/>
         </div>

@@ -16,30 +16,48 @@ export default class Beach extends React.Component {
   render() {
     const {id, beach, surf, report, tide, wind, swell, water, weather, suit, livestream} = this.props.beach
     return (
-      <div onClick={this.handleClick}>
-        <div className="beach">
+      <div className="card" onClick={this.handleClick}>
+        <div className="beachName">
           {beach}
         </div>
-        <img src='/images/LaJolla.png'/>
-        <div>
+        <img className="pic" src='/images/LaJolla.png'/>
+        <div className="surfHeight">
+          <div>
+            Surf
+          </div>
           {surf} ft
         </div>
-        <div>
-          {report}
+        <div className="report">
+         <b>Afternoon Outlook:</b> {report}
         </div>
-        <div>
-          {tide} ft
-        </div>
-        <div>
-          {wind} mph
-        </div>
-        <div>
+        <div className="swell">
+          <div>
+            Swell
+          </div>
           {swell}
         </div>
-        <div>
+        <div className="wind">
+          <div>
+            Wind
+          </div>
+          {wind} mph
+        </div>
+        <div className="tide">
+          <div>
+            Tide
+          </div>
+          {tide} ft
+        </div>
+        <div className="water">
+          <div>
+            Water Temp
+          </div>
           {water} °F
         </div>
-        <div>
+        <div className="weather">
+          <div>
+            Air Temp
+          </div>
           {weather} °F
         </div>
         {/* <img src={suit}/> */}

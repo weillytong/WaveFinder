@@ -22,6 +22,7 @@ const reportSchema = new Schema ({
   weather: String,
   suit: String,
   livestream: String,
+  compass: String
 })
 
 const Report = mongoose.model('Report', reportSchema)

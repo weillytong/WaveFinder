@@ -13,7 +13,7 @@ export default class BeachList extends React.Component {
     return (
       <div>
         {this.props.beachList.map((beach, key) => (
-          <div className="card" key={key}>
+          <div key={key}>
             <Beach beach={beach}/>
           </div>
         ))}
