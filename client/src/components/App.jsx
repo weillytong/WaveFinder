@@ -67,7 +67,7 @@ export default class App extends React.Component {
       return (
         <div>
             <div className="header">
-              <img className="logo" src="/images/wave.svg"/> Surf Finder
+              <img className="logo" src="/images/wave.svg"/> Wave Finder
             </div>
           <div className="navigation">
             <select value={this.state.city} onChange={this.handleChange}>

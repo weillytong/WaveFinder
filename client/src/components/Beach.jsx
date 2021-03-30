@@ -22,43 +22,55 @@ export default class Beach extends React.Component {
         </div>
         <img className="pic" src='/images/LaJolla.png'/>
         <div className="surfHeight">
-          <div>
-            Surf
+          <div className="metricTitle">
+            Surf Height
           </div>
-          {surf} ft
+          <div className="metric">
+            {surf} ft
+          </div>
         </div>
         <div className="report">
          <b>Afternoon Outlook:</b> {report}
         </div>
         <div className="swell">
-          <div>
+          <div className="metricTitle">
             Swell
           </div>
-          {swell}
+          <div className="metric">
+            {swell}
+          </div>
         </div>
         <div className="wind">
-          <div>
+          <div className="metricTitle">
             Wind
           </div>
-          {wind} mph
+          <div className="metric">
+            {wind} mph
+          </div>
         </div>
         <div className="tide">
-          <div>
+          <div className="metricTitle">
             Tide
           </div>
-          {tide} ft
+          <div className="metric">
+            {tide} ft
+          </div>
         </div>
         <div className="water">
-          <div>
+          <div className="metricTitle">
             Water Temp
           </div>
-          {water} °F
+          <div className="metric">
+            {water} °F
+          </div>
         </div>
         <div className="weather">
-          <div>
+          <div className="metricTitle">
             Air Temp
           </div>
-          {weather} °F
+          <div className="metric">
+            {weather} °F
+          </div>
         </div>
         {/* <img src={suit}/> */}
       </div>
