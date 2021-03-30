@@ -12,6 +12,7 @@ db.once('open', function() {
 const reportSchema = new Schema ({
   id: Number,
   beach: String,
+  city: String,
   surf: String,
   report: String,
   tide: String,
@@ -19,7 +20,8 @@ const reportSchema = new Schema ({
   swell: String,
   water: String,
   weather: String,
-  suit: String
+  suit: String,
+  livestream: String,
 })
 
 const Report = mongoose.model('Report', reportSchema)
