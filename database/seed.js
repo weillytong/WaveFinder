@@ -87,7 +87,7 @@ Surf.insertMany([
   },
   {
     id: 5,
-    beach: 'Cardiff',
+    beach: 'Cardiff Beach',
     beachImg: 'https://www.visitcalifornia.com/sites/visitcalifornia.com/files/styles/welcome_image/public/VC_CoastalCamping_Module1_SanElijo_RF_520618474_1280x640.jpg',
     city: 'San Diego',
     surf: '2-3',

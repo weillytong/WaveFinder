@@ -29,7 +29,7 @@ export default class Recommended extends React.Component {
     const {id, beach, beachImg, surf, report, tide, wind, swell, water, weather, suit, livestream} = this.props.beach
     return (
       <div className="recCard">
-        <div style={{fontSize: "20px", textAlign: "center", margin: "5px"}}>
+        <div style={{fontSize: "20px", textAlign: "center", margin: "10px"}}>
           {beach} Favorites
         </div>
         <div className="recsContainer" onClick={this.clickRestaurants}>

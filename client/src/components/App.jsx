@@ -1,6 +1,13 @@
 import React from 'react';
 import axios from 'axios';
+import Select from 'react-select';
 import BeachList from './BeachList.jsx';
+
+const options = [
+  {value: 'All Cities', label: 'All Cities'},
+  {value: 'San Diego', label: 'San Diego'},
+  {value: 'Los Angeles', label: 'Los Angeles'},
+]
 
 
 export default class App extends React.Component {
@@ -9,7 +16,7 @@ export default class App extends React.Component {
     this.state = {
       beachList: [],
       selectedBeachList: [],
-      city: 'All Cities'
+      city: ''
     };
     this.getReport = this.getReport.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -46,15 +53,25 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (this.state.city === 'All Cities') {
+    if (this.state.city === '') {
+      return (
+        <div>
+        <div className="header">
+          <img className="logo" src="/images/wave.svg"/> Wave Finder
+        </div>
+        </div>
+      )
+    } else if (this.state.city === 'All Cities') {
       return (
         <div>
             <div className="header">
               <img className="logo" src="/images/wave.svg"/> Wave Finder
             </div>
             <div className="navigation">
+              {/* <Select options={options}/> */}
               <select value={this.state.city} onChange={this.handleChange}>
-              <option value="All Cities"> All Cities </option>
+                <option> Select an Option </option>
+                <option value="All Cities"> All Cities </option>
                 <option value="San Diego"> San Diego </option>
                 <option value="Los Angeles"> Los Angeles </option>
               </select>
@@ -70,8 +87,10 @@ export default class App extends React.Component {
               <img className="logo" src="/images/wave.svg"/> Wave Finder
             </div>
           <div className="navigation">
+            {/* <Select options={options}/> */}
             <select value={this.state.city} onChange={this.handleChange}>
-            <option value="All Cities"> All Cities </option>
+              <option> Select an Option </option>
+              <option value="All Cities"> All Cities </option>
               <option value="San Diego"> San Diego </option>
               <option value="Los Angeles"> Los Angeles </option>
             </select>
