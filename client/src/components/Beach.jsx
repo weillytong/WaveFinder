@@ -9,6 +9,7 @@ export default class Beach extends React.Component {
     }
     this.liveStreamClick = this.liveStreamClick.bind(this);
     this.suitClick = this.suitClick.bind(this);
+    this.favoriteClick = this.favoriteClick.bind(this);
   }
 
   liveStreamClick() {
@@ -19,12 +20,23 @@ export default class Beach extends React.Component {
     window.open(this.props.beach.suit[0].website)
   }
 
+  favoriteClick() {
+    alert('Added to Favorites List');
+    if (localStorage.favList) {
+      let storedList = JSON.parse(localStorage.favList);
+      storedList.unshift(this.props.beach);
+      localStorage.setItem('favList', JSON.stringify(storedList));
+    } else {
+      localStorage.setItem('favList', JSON.stringify([this.props.beach]))
+    }
+  }
+
 
   render() {
     const {id, beach, beachImg, surf, report, tide, wind, swell, water, weather, suit, livestream} = this.props.beach
     return (
       <div className="card">
-        <button className="fas fa-star" type="button" id="favBtn" /*onClick={this.handleModal}*/ aria-label="Open"></button>
+        <button className="fas fa-star" type="button" id="favBtn" onClick={this.favoriteClick} aria-label="Open"></button>
         <div className="beachName">
           {beach}
         </div>
