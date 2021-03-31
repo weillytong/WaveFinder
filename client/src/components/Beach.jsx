@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 export default class Beach extends React.Component {
   constructor(props) {
