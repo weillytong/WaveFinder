@@ -24,6 +24,7 @@ export default class Beach extends React.Component {
     const {id, beach, beachImg, surf, report, tide, wind, swell, water, weather, suit, livestream} = this.props.beach
     return (
       <div className="card">
+        <button className="fas fa-star" type="button" id="favBtn" /*onClick={this.handleModal}*/ aria-label="Open"></button>
         <div className="beachName">
           {beach}
         </div>
