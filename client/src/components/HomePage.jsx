@@ -15,6 +15,15 @@ export default class HomePage extends React.Component {
       { width: 1150, itemsToShow: 4 },
       { width: 1450, itemsToShow: 5 }
     ];
+    this.removeFav = this.removeFav.bind(this);
+  }
+
+  removeFav(beachId) {
+    let storedList = JSON.parse(localStorage.favList);
+    let filteredList = storedList.filter((favorite) => (
+      favorite.id !== beachId
+    ))
+    localStorage.setItem('favList', JSON.stringify(filteredList));
   }
 
   render() {
@@ -27,12 +36,13 @@ export default class HomePage extends React.Component {
           Weilly's Favorite Beaches
         </div>
         <div>
-          <Carousel breakPoints={this.breakPoints} itemsToShow={5}  disableArrowsOnEnd={true}>
+          <Carousel breakPoints={this.breakPoints} itemsToShow={4}  disableArrowsOnEnd={true}>
+            {/* {console.log((localStorage.favList))} */}
             {(localStorage.favList !== undefined)
               ?
               JSON.parse(localStorage.favList).map((favorite, key) => (
                 <div className='favCard' key={key}>
-                  <Favorite favorite={favorite} /*removeOutfit={this.removeOutfit}*/ />
+                  <Favorite favorite={favorite} removeFav={this.removeFav}/>
                 </div>
               ))
               :

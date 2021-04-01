@@ -14,14 +14,17 @@ export default class Recommended extends React.Component {
 
   clickSurfShops() {
     window.open(`https://www.yelp.com/search?find_desc=surf%20shop&find_loc=${this.props.beach.beach}&sortby=review_count`)
+    // window.open(`https://www.yelp.com/search?find_desc=surf%20shop&find_loc=${this.props.beach.beach}`)
   }
 
   clickRestaurants() {
     window.open(`https://www.yelp.com/search?find_desc=restaurants&find_loc=${this.props.beach.beach}&sortby=review_count`)
+    // window.open(`https://www.yelp.com/search?find_desc=restaurants&find_loc=${this.props.beach.beach}`)
   }
 
   clickBars() {
     window.open(`https://www.yelp.com/search?find_desc=bars&find_loc=${this.props.beach.beach}&sortby=review_count`)
+    // window.open(`https://www.yelp.com/search?find_desc=bars&find_loc=${this.props.beach.beach}`)
   }
 
 
@@ -32,7 +35,7 @@ export default class Recommended extends React.Component {
         <div style={{fontSize: "20px", textAlign: "center", margin: "10px"}}>
           {beach} Favorites
         </div>
-        <div className="recsContainer" onClick={this.clickRestaurants}>
+        <div className="recsContainer" onClick={this.clickSurfShops}>
           <img className="icon" src="/images/surfer.png"/>
           <span> Surf Shops </span>
         </div>

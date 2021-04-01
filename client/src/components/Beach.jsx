@@ -21,13 +21,21 @@ export default class Beach extends React.Component {
   }
 
   favoriteClick() {
-    alert('Added to Favorites List');
     if (localStorage.favList) {
-      let storedList = JSON.parse(localStorage.favList);
-      storedList.unshift(this.props.beach);
-      localStorage.setItem('favList', JSON.stringify(storedList));
+      let favFound = JSON.parse(localStorage.favList).find((favorite) => (
+        favorite.id === this.props.beach.id
+      ))
+      if (favFound === undefined) {
+        let storedList = JSON.parse(localStorage.favList);
+        storedList.unshift(this.props.beach);
+        localStorage.setItem('favList', JSON.stringify(storedList));
+        alert('Added to Favorites List');
+      } else {
+        alert('This beach is already in your favorites list!');
+      }
     } else {
       localStorage.setItem('favList', JSON.stringify([this.props.beach]))
+      alert('Added to Favorites List');
     }
   }
 
@@ -36,7 +44,13 @@ export default class Beach extends React.Component {
     const {id, beach, beachImg, surf, report, tide, wind, swell, water, weather, suit, livestream} = this.props.beach
     return (
       <div className="card">
-        <button className="fas fa-star" type="button" id="favBtn" onClick={this.favoriteClick} aria-label="Open"></button>
+        <button
+          className="fas fa-star"
+          type="button"
+          id="favBtn"
+          onClick={this.favoriteClick}
+        >
+        </button>
         <div className="beachName">
           {beach}
         </div>
