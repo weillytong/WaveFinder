@@ -35,7 +35,7 @@ export default class Recommended extends React.Component {
         <div style={{fontSize: "20px", textAlign: "center", margin: "10px"}}>
           {beach} Favorites
         </div>
-        <div className="recsContainer" onClick={this.clickSurfShops}>
+        <div className="recsContainer" onClick={this.clickSurfShops'}>
           <img className="icon" src="/images/surfer.png"/>
           <span> Surf Shops </span>
         </div>

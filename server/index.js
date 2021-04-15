@@ -5,7 +5,7 @@ const cors = require('cors');
 const path = require('path');
 const router = require('./router.js');
 
-const port = 3000;
+const port = 8000;
 
 const server = express();
 
